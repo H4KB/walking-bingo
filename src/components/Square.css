@@ -1,0 +1,17 @@
+.grid-item {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.square {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+
+.suare-image {
+  width: 60%;
+  height: 60%;
+}
