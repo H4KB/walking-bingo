@@ -1,9 +1,24 @@
-.grid-container {
+.bingo {
+  background-color: bisque;
+  border-radius: 5%;
+  width: 800px;
+  height: 800px;
+  margin-top: 32px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.bingo-title {
+  padding-top: 16px;
+}
+
+.bingo-squares {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0 0;
   margin-right: auto;
   margin-left: auto;
-  width: 500px;
-  height: 500px;
+  padding-top: 16px;
+  width: 80%;
+  height: 80%;
 }

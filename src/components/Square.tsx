@@ -11,7 +11,7 @@ const Square = (props: SquareProps) => {
     <div className="grid-item">
       <button key={props.id} className="square">
         <img className="suare-image" src={props.image} alt={props.text} />
-        <p>{props.text}</p>
+        <h2>{props.text}</h2>
       </button>
     </div>
   );
