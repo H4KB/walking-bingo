@@ -2,6 +2,8 @@ import Square from "./Square";
 import SquareModel from "../models/SquareModel";
 
 import "./Bingo.css";
+import { Fragment, useState } from "react";
+import ConfirmModal from "./ConfirmModal";
 
 const Bingo = () => {
   const squares = [
@@ -16,17 +18,40 @@ const Bingo = () => {
     new SquareModel("9", "/images/walking.png", "walking"),
   ];
 
+  const [confirmModalVisible, setConfirmModalVisible] = useState(false);
+
+  const showModalHandler = () => {
+    setConfirmModalVisible(true);
+  };
+
+  const hideModalHandler = () => {
+    setConfirmModalVisible(false);
+  };
+
   return (
-    <div className="bingo">
-      <div className="bingo-title">
-        <h2>Walking BINGO</h2>
+    <Fragment>
+      {confirmModalVisible && (
+        <ConfirmModal
+          square={new SquareModel("1", "/images/walking.png", "test")}
+          onFoundClick={hideModalHandler}
+          onNotFoundClick={hideModalHandler}
+        />
+      )}
+      <div className="bingo">
+        <div className="bingo-title">
+          <h2>Walking BINGO</h2>
+        </div>
+        <div className="bingo-squares">
+          {squares.map((square) => (
+            <Square
+              key={square.id}
+              square={square}
+              onClick={showModalHandler}
+            />
+          ))}
+        </div>
       </div>
-      <div className="bingo-squares">
-        {squares.map((square) => (
-          <Square key={square.id} square={square} />
-        ))}
-      </div>
-    </div>
+    </Fragment>
   );
 };
 

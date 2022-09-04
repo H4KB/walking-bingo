@@ -2,10 +2,12 @@ import "./Square.css";
 
 import SquareModel from "../models/SquareModel";
 
-const Square: React.FC<{ square: SquareModel }> = (props) => {
+const Square: React.FC<{ square: SquareModel; onClick: () => void }> = (
+  props
+) => {
   return (
     <div className="grid-item">
-      <button key={props.square.id} className="square">
+      <button key={props.square.id} className="square" onClick={props.onClick}>
         <img
           className="suare-image"
           src={props.square.imageUrl}
