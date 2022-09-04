@@ -1,17 +1,17 @@
 import "./Square.css";
 
-type SquareProps = {
-  id: number;
-  image: string;
-  text: string;
-};
+import SquareModel from "../models/SquareModel";
 
-const Square = (props: SquareProps) => {
+const Square: React.FC<{ square: SquareModel }> = (props) => {
   return (
     <div className="grid-item">
-      <button key={props.id} className="square">
-        <img className="suare-image" src={props.image} alt={props.text} />
-        <h2>{props.text}</h2>
+      <button key={props.square.id} className="square">
+        <img
+          className="suare-image"
+          src={props.square.imageUrl}
+          alt={props.square.title}
+        />
+        <h2>{props.square.title}</h2>
       </button>
     </div>
   );
