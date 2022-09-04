@@ -4,10 +4,15 @@ import Bingo from "./components/Bingo";
 
 import logo from "./images/walking.png";
 import "./App.css";
+import ConfirmModal from "./components/ConfirmModal";
+import SquareModel from "./models/SquareModel";
 
 function App() {
   return (
-    <div className="App">
+    <React.Fragment>
+      <ConfirmModal
+        square={new SquareModel("1", "/images/walking.png", "test")}
+      />
       <header className="App-header">
         <img src={logo} alt="walking" />
         <div>Walking BINGO</div>
@@ -15,7 +20,7 @@ function App() {
       <body>
         <Bingo />
       </body>
-    </div>
+    </React.Fragment>
   );
 }
 
